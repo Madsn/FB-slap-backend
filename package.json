@@ -4,6 +4,7 @@
   "description": "Backend for FB-slap chrome extension",
   "main": "app.js",
   "dependencies": {
+    "mongoose": "^3.8.19",
     "restify": "^2.8.3"
   },
   "devDependencies": {},
