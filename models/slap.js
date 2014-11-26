@@ -10,7 +10,7 @@ var sequelize = new Sequelize('slapdb_dev', 'root', '', {
 });
 
 var Slap = sequelize.define('Slap', {
-  fb_id: {type: Sequelize.STRING, required: true},
+  fb_id: {type: Sequelize.INTEGER, required: true},
   count: {type: Sequelize.INTEGER, required: true, default: 0}
 }, {
   freezeTableName: true
