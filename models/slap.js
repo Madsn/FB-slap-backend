@@ -4,11 +4,15 @@ var db = process.env.DATABASE || 'slapdb_dev';
 var dbUser = process.env.DATABASE_USER || 'root';
 var dbPass = process.env.DATABASE_PASS || '';
 var dbDialect = process.env.SEQUELIZE_DIALECT || 'mysql';
+var dbHost = process.env.DATABASE_HOST || 'localhost';
+var dbPort = process.env.DATABASE_PORT || '3306';
 
 var sequelize = new Sequelize(db, dbUser, dbPass, {
   // sqlite! now!
   //dialect: 'sqlite',
-  dialect: dbDialect
+  dialect: dbDialect,
+  port: dbPort,
+  host: dbHost
 
   // the storage engine for sqlite
   // - default ':memory:'
