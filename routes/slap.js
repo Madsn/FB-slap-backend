@@ -43,7 +43,7 @@ router.get('/add/:id', function(req, res) {
       }
     })
     .error(function(err){
-      console.log('error', err);
+      res.send('Error fetching slap: ' + err);
     });
 });
 

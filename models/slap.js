@@ -1,8 +1,14 @@
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('slapdb_dev', 'root', '', {
+
+var db = process.env.DATABASE || 'slapdb_dev';
+var dbUser = process.env.DATABASE_USER || 'root';
+var dbPass = process.env.DATABASE_PASS || '';
+var dbDialect = process.env.SEQUELIZE_DIALECT || 'mysql';
+
+var sequelize = new Sequelize(db, dbUser, dbPass, {
   // sqlite! now!
   //dialect: 'sqlite',
-  dialect: 'mysql'
+  dialect: dbDialect
 
   // the storage engine for sqlite
   // - default ':memory:'
